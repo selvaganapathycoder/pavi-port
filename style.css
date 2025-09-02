@@ -1,4 +1,3 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -27,10 +26,17 @@ body {
   z-index: 1000;
 }
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00d4ff;
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
   list-style: none;
+  transition: max-height 0.4s ease;
 }
 
 .nav-links a {
@@ -48,6 +54,14 @@ body {
 .contact-info {
   font-size: 14px;
   color: #bbb;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #00d4ff;
+  cursor: pointer;
 }
 
 /* Hero Section */
@@ -305,4 +319,133 @@ h2 {
 
 .footer .social a {
   margin: 0 10px;
+}
+
+/* ------------------- */
+/* Responsive Design   */
+/* ------------------- */
+
+/* Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .contact-right {
+    padding-left: 0;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+    animation: slideDown 0.4s ease;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .contact-info {
+    display: none;
+  }
+
+  .hero {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .typing-text {
+    font-size: 1rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-grid {
+    flex-direction: column;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+
+  .social a {
+    font-size: 1.1rem;
+  }
+
+  .about-image,
+  .contact-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
 }
